@@ -1,3 +1,18 @@
+import { asyncGetQuotes, getQuotes } from "./services/promise-me";
+
 export default function App() {
-  return <h1>Hello World</h1>;
+const handleClick = (callback) => {
+  const result = callbacl();
+  console.log(resutl)
+};
+
+
+  return (
+  
+  <>
+  <button onClick={() => handleclick(asyncGetQuotes)}>
+    async get quotes
+  </button>
+  <button onClick={() => handleclick(getquotes)}> get quotes</button>
+  </>)
 }
