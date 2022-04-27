@@ -4,7 +4,9 @@
 export async function asyncGetQuotes() {
     const res = await fetch('https://futuramaapi.herokuapp.com/api/quotes/1');
     const result = await res.json();
-    return result;
+    const quotes = result[0];
+    const totalResults = result.length;
+    return {quote, totalResults };
 }
     export function getQuotes() {
         return 1
@@ -13,7 +15,9 @@ export async function asyncGetQuotes() {
 /**
  * TODO: Exercise 2: use `fetch` & `.then` syntax to get the same data from the first exercise.
  */export function thenGetQuotes() {
-     return fetch('https://futuramaapi.herokuapp.com/api/quotes/1').then((res) => res.json());
+     return fetch('https://futuramaapi.herokuapp.com/api/quotes/1')
+     .then((res) => res.json())
+     .then((result) => ({ quote: result[0], totalResults: result.length }));
  }
 
 /**

@@ -13,6 +13,6 @@ const handleClick = (callback) => {
   <button onClick={() => handleclick(asyncGetQuotes)}>
     async get quotes
   </button>
-  <button onClick={() => handleclick(getquotes)}> get quotes</button>
+  <button onClick={() => handleclick(getquotes)}> .then() get quotes</button>
   </>)
 }
