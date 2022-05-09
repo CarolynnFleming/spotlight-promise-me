@@ -1,21 +1,34 @@
 /**
  * TODO: Exercise 1: use `fetch` & async/await to get data from an API
  */
-export async function asyncGetQuotes() {
+export async function asyncGetCharacters() {
     console.log('1. Before async fetch');
-    const res = await fetch('https://futuramaapi.herokuapp.com/api/quotes/1');
-    const result = await res.json();
-    const quotes = result[0];
-    const totalResults = result.length;
-    return {quote, totalResults };
+    const res = await fetch('https://last-airbender-api.herokuapp.com/api/v1/characters');
+
+    console.log('2. async fetch complete');
+
+    const character = await res.json();
+
+    console.log('3. after async fetch');
+
+   
+    return { Character: character[0], totalCharacters: character.length };
 }
 
 /**
  * TODO: Exercise 2: use `fetch` & `.then` syntax to get the same data from the first exercise.
- */export function thenGetQuotes() {
-     return fetch('https://futuramaapi.herokuapp.com/api/quotes/1')
+ */export function thenGetCharacters() {
+     console.log('1. before .then fetch');
+
+     return fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
      .then((res) => res.json())
-     .then((result) => ({ quote: result[0], totalResults: result.length }));
+     .then((result) => ({ character: character[0], totalCharacters: result.length }))
+     .then(() => console.log('2. .then fetch complete'));
+
+     console.log('3. After .then fetch');
+
+     return character;
+
  }
 
 /**
