@@ -34,6 +34,20 @@ export async function asyncGetCharacters() {
 /**
  * TODO: Exercise 3: use `fetch`, async/await, and a try/catch statement to get data from an API and handle errors
  */
+export async function asyncTryGetCharacters() {
+    try{
+        console.log('1. Before async fetch');
+
+        const res = await fetch('https://last-airbender-api.herokuapp.com/api/v1/characters');
+        console.log('2. async fetch complete');
+        const character = await res.json();
+        console.log('3. after async fetch');
+        return { character: character[0], totalCharacters: character.length };
+
+    }catch (error) {
+        console.log('Oops! An error occurred');
+    }
+}
 
 /**
  * TODO: Exercise 4: use `fetch`, `.then`, and `.catch` to get the same data from exercise 3 while handling errors

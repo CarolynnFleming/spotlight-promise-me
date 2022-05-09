@@ -7,6 +7,6 @@ export default function App() {
   <button onClick={async () => console.log(await asyncGetCharacters())}>
     async get characters
   </button>
-  <button onClick={async () => console.log(await thenGetCharacters())}> .then() get quotes</button>
+  <button onClick={async () => console.log(await thenGetCharacters())}> .then() get characters</button>
   </>)
 }
