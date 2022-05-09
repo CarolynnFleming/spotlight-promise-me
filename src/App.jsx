@@ -1,4 +1,4 @@
-import { asyncGetCharacters, thenGetCharacters } from "./services/promise-me";
+import { asyncGetCharacters, asyncTryGetCharacters, thenGetCharacters, thenTryGetCharacters } from "./services/promise-me";
 
 export default function App() {
   return (
@@ -8,5 +8,7 @@ export default function App() {
     async get characters
   </button>
   <button onClick={async () => console.log(await thenGetCharacters())}> .then() get characters</button>
+  <button onClick={async () => console.log(await asyncTryGetCharacters)}>asyncTryGetCharacters</button>
+  <button onClick={async () => console.log(await thenTryGetCharacters)}>thenTryGetCharacters</button>
   </>)
 }
